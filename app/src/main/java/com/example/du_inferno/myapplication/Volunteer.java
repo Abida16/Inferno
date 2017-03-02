@@ -1,6 +1,5 @@
 package com.example.du_inferno.myapplication;
 
-import android.net.wifi.WifiEnterpriseConfig;
 
 /**
  * Created by abida on 02/03/17.
@@ -18,7 +17,7 @@ public class Volunteer  {
 
     }
     // constructor
-    public  Volunteer(int id, String name, String _phone_number,String Email , String Password, String Address){
+    public  Volunteer( String name, String _phone_number,String Email , String Password, String Address){
 
         this._name = name;
         this._phone_number = _phone_number;
@@ -66,5 +65,14 @@ public class Volunteer  {
     // setting phone number
     public void setAddress(String Address){
         this.Address = Address;
+    }
+
+    public String getPassword(){
+        return this.Password;
+    }
+
+    // setting phone number
+    public void setPassword(String Address){
+        this.Password = Password;
     }
 }

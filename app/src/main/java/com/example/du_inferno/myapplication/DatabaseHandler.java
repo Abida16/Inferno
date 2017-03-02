@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
@@ -72,16 +73,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Getting single Volunteer
-    Volunteer getVolunteer(int id) {
+    Volunteer getVolunteer(String Email) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_Volunteers, new String[] { KEY_EMAIL,
                         KEY_NAME, KEY_PH_NO ,KEY_ADDRESS,KEY_PASSWORD}, KEY_EMAIL + "=?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
+                new String[] {Email }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
-        Volunteer Volunteer = new Volunteer(cursor.getString(0), cursor.getString(1), cursor.getString(2));
+        Volunteer Volunteer = new Volunteer(cursor.getString(0), cursor.getString(1), cursor.getString(2),cursor.getString(3),cursor.getString(4));
         // return Volunteer
         return Volunteer;
     }
@@ -99,9 +100,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Volunteer Volunteer = new Volunteer();
-                Volunteer.setID(Integer.parseInt(cursor.getString(0)));
+                Volunteer.setEmail(cursor.getString(0));
                 Volunteer.setName(cursor.getString(1));
                 Volunteer.setPhoneNumber(cursor.getString(2));
+                Volunteer.setAddress(cursor.getString(3));
+                Volunteer.setPassword(cursor.getString(4));
                 // Adding Volunteer to list
                 VolunteerList.add(Volunteer);
             } while (cursor.moveToNext());
@@ -116,19 +119,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        if(Volunteer.getName()!=null)
         values.put(KEY_NAME, Volunteer.getName());
+        if(Volunteer.getPhoneNumber()!=null)
         values.put(KEY_PH_NO, Volunteer.getPhoneNumber());
+        if(Volunteer.getAddress()!=null)
+        values.put(KEY_ADDRESS, Volunteer.getAddress());
+        if(Volunteer.getPassword()!=null)
+        values.put(KEY_PASSWORD, Volunteer.getPassword());
 
         // updating row
-        return db.update(TABLE_Volunteers, values, KEY_ID + " = ?",
-                new String[] { String.valueOf(Volunteer.getID()) });
+        return db.update(TABLE_Volunteers, values, KEY_EMAIL + " = ?",
+                new String[] { String.valueOf(Volunteer.getEmail()) });
     }
 
     // Deleting single Volunteer
     public void deleteVolunteer(Volunteer Volunteer) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_Volunteers, KEY_ID + " = ?",
-                new String[] { String.valueOf(Volunteer.getID()) });
+        db.delete(TABLE_Volunteers, KEY_EMAIL  + " = ?",
+                new String[] { String.valueOf(Volunteer.getEmail()) });
         db.close();
     }
 

@@ -17,7 +17,7 @@ public class Account_Settings extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_voluntier__form);
+            setContentView(R.layout.activity_volunteer__form);
         }
     }
 }
