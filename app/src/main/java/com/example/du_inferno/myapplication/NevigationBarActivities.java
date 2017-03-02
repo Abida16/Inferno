@@ -15,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-public class Editing_Account extends AppCompatActivity
+public class NevigationBarActivities extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -48,7 +48,7 @@ public class Editing_Account extends AppCompatActivity
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Editing_Account.this, MapsActivity.class));
+                startActivity(new Intent(NevigationBarActivities.this, MapsActivity.class));
             }
         });
     }
@@ -79,7 +79,7 @@ public class Editing_Account extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            startActivity(new Intent(NevigationBarActivities.this,Settings.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -92,16 +92,16 @@ public class Editing_Account extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_voluntier) {
-            // Handle the camera action
-        } else if (id == R.id.nav_setting_icon) {
 
+            startActivity(new Intent(NevigationBarActivities.this,Volunteer_Form.class));
+        } else if (id == R.id.nav_acc_setting) {
+            startActivity(new Intent(NevigationBarActivities.this,Account_Settings.class));
         } else if (id == R.id.nav_add_contact) {
+            startActivity(new Intent(NevigationBarActivities.this,Emergency_Contact.class));
 
-        } else if (id == R.id.nav_manage) {
+        }  else if (id == R.id.nav_send) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        }else if (id == R.id.nav_share) {
 
         }
 

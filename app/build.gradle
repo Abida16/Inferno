@@ -14,6 +14,7 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -33,5 +34,8 @@ dependencies {
     compile 'com.google.android.gms:play-services:10.2.0'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.github.kingsammalik:SamLocationAndGeocoding:1.1.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.android.support:support-vector-drawable:25.2.0'
     testCompile 'junit:junit:4.12'
 }

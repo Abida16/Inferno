@@ -10,6 +10,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Editing_Account"
+            android:name=".NevigationBarActivities"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -35,7 +40,7 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
 
- 	<meta-data
+        <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
@@ -45,17 +50,37 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps">
-
-		<intent-filter>
+            <intent-filter>
                 <action android:name="com.example.du_inferno.myapplication.MapsActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
 
-	</activity>
+        <activity
+            android:name=".Settings"
+            android:label="@string/title_activity_account__settings" />
+        <activity android:name=".Account_Settings">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication.Account_Settings" />
 
-        
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Emergency_Contact">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication.Emergency_Contact" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Volunteer_Form">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication..Volunteer_Form" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
