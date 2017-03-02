@@ -20,7 +20,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "VolunteersManager";
 
     // Volunteers table name
-    private static final String TABLE_Volunteers = "Volunteers";
+    private static final String TABLE_Volunteers = "TVolunteer";
 
     // Volunteers Table Columns names
 
@@ -37,9 +37,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_VolunteerS_TABLE = "CREATE TABLE " + TABLE_Volunteers + "("
-                + KEY_EMAIL + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_PH_NO + " TEXT" + KEY_ADDRESS+ " TEXT" + KEY_PASSWORD  + " TEXT" + ")";
+      // onUpgrade( db,1,2);
+       String CREATE_VolunteerS_TABLE = "CREATE TABLE IF NOT EXISTS" + TABLE_Volunteers + "("
+                + KEY_EMAIL + " TEXT PRIMARY KEY," + KEY_ADDRESS+ " TEXT," + KEY_PASSWORD  + " TEXT" +KEY_NAME + " TEXT,"
+                + KEY_PH_NO + " TEXT," +  ")";
         db.execSQL(CREATE_VolunteerS_TABLE);
     }
 
@@ -62,11 +63,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        values.put(KEY_EMAIL, Volunteer.getEmail());
+        values.put(KEY_ADDRESS, Volunteer.getAddress()); // Volunteer Phone
+        values.put(KEY_PASSWORD, Volunteer.getPassword()); // Volunteer Phone// Volunteer Name
         values.put(KEY_NAME, Volunteer.getName()); // Volunteer Name
         values.put(KEY_PH_NO, Volunteer.getPhoneNumber()); // Volunteer Phone
-        values.put(KEY_EMAIL, Volunteer.getEmail()); // Volunteer Name
-        values.put(KEY_ADDRESS, Volunteer.getAddress()); // Volunteer Phone
-        values.put(KEY_PASSWORD, Volunteer.getAddress()); // Volunteer Phone
+
+
         // Inserting Row
         db.insert(TABLE_Volunteers, null, values);
         db.close(); // Closing database connection
@@ -76,8 +79,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     Volunteer getVolunteer(String Email) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_Volunteers, new String[] { KEY_EMAIL,
-                        KEY_NAME, KEY_PH_NO ,KEY_ADDRESS,KEY_PASSWORD}, KEY_EMAIL + "=?",
+        Cursor cursor = db.query(TABLE_Volunteers, new String[] { KEY_EMAIL,KEY_ADDRESS,KEY_PASSWORD,
+                        KEY_NAME, KEY_PH_NO }, KEY_EMAIL + "=?",
                 new String[] {Email }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -101,10 +104,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             do {
                 Volunteer Volunteer = new Volunteer();
                 Volunteer.setEmail(cursor.getString(0));
-                Volunteer.setName(cursor.getString(1));
-                Volunteer.setPhoneNumber(cursor.getString(2));
-                Volunteer.setAddress(cursor.getString(3));
-                Volunteer.setPassword(cursor.getString(4));
+                Volunteer.setAddress(cursor.getString(1));
+                Volunteer.setPassword(cursor.getString(2));
+                Volunteer.setName(cursor.getString(3));
+                Volunteer.setPhoneNumber(cursor.getString(4));
+
                 // Adding Volunteer to list
                 VolunteerList.add(Volunteer);
             } while (cursor.moveToNext());
@@ -119,14 +123,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        if(Volunteer.getAddress()!=null)
+            values.put(KEY_ADDRESS, Volunteer.getAddress());
+        if(Volunteer.getPassword()!=null)
+            values.put(KEY_PASSWORD, Volunteer.getPassword());
         if(Volunteer.getName()!=null)
         values.put(KEY_NAME, Volunteer.getName());
         if(Volunteer.getPhoneNumber()!=null)
         values.put(KEY_PH_NO, Volunteer.getPhoneNumber());
-        if(Volunteer.getAddress()!=null)
-        values.put(KEY_ADDRESS, Volunteer.getAddress());
-        if(Volunteer.getPassword()!=null)
-        values.put(KEY_PASSWORD, Volunteer.getPassword());
+
 
         // updating row
         return db.update(TABLE_Volunteers, values, KEY_EMAIL + " = ?",

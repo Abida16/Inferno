@@ -21,6 +21,9 @@ public class Volunteer  {
 
         this._name = name;
         this._phone_number = _phone_number;
+        this.Email = Email;
+        this.Password = Password;
+        this.Address = Address;
     }
 
     // constructor
