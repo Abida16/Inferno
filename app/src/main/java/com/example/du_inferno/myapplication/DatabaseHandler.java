@@ -14,7 +14,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Database Name
     private static final String DATABASE_NAME = "VolunteersManager";
@@ -38,9 +38,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
       // onUpgrade( db,1,2);
-       String CREATE_VolunteerS_TABLE = "CREATE TABLE IF NOT EXISTS" + TABLE_Volunteers + "("
-                + KEY_EMAIL + " TEXT PRIMARY KEY," + KEY_ADDRESS+ " TEXT," + KEY_PASSWORD  + " TEXT" +KEY_NAME + " TEXT,"
-                + KEY_PH_NO + " TEXT," +  ")";
+       String CREATE_VolunteerS_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_Volunteers + "("
+                + KEY_EMAIL + " TEXT PRIMARY KEY," + KEY_ADDRESS+ " TEXT," + KEY_PASSWORD  + " TEXT," +KEY_NAME + " TEXT,"
+                + KEY_PH_NO + " TEXT " +  ")";
         db.execSQL(CREATE_VolunteerS_TABLE);
     }
 
@@ -119,24 +119,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Updating single Volunteer
-    public int updateVolunteer(Volunteer Volunteer) {
-        SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        if(Volunteer.getAddress()!=null)
-            values.put(KEY_ADDRESS, Volunteer.getAddress());
-        if(Volunteer.getPassword()!=null)
-            values.put(KEY_PASSWORD, Volunteer.getPassword());
-        if(Volunteer.getName()!=null)
-        values.put(KEY_NAME, Volunteer.getName());
-        if(Volunteer.getPhoneNumber()!=null)
-        values.put(KEY_PH_NO, Volunteer.getPhoneNumber());
-
-
-        // updating row
-        return db.update(TABLE_Volunteers, values, KEY_EMAIL + " = ?",
-                new String[] { String.valueOf(Volunteer.getEmail()) });
-    }
 
     // Deleting single Volunteer
     public void deleteVolunteer(Volunteer Volunteer) {

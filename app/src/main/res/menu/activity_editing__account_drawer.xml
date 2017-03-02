@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_voluntier"
+            android:id="@+id/nav_volunteer"
             android:icon="@drawable/voluntier"
-            android:title="Join as voluntier" />
+            android:title="Join as volunteer" />
         <item
             android:id="@+id/nav_acc_setting"
             android:icon="@drawable/setting_icon"
@@ -14,6 +14,10 @@
             android:id="@+id/nav_add_contact"
             android:icon="@drawable/add_contact"
             android:title="Add emergency contact" />
+        <item
+            android:id="@+id/nav_show_volunteer"
+            android:icon="@drawable/voluntier"
+            android:title="Check who is ready to help you" />
 
     </group>
 
@@ -23,10 +27,7 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+
         </menu>
     </item>
 

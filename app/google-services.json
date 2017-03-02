@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "660989553102",
+    "firebase_url": "https://inferno-9944a.firebaseio.com",
+    "project_id": "inferno-9944a",
+    "storage_bucket": "inferno-9944a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660989553102:android:2ff9cbc4f52dcfe8",
+        "android_client_info": {
+          "package_name": "com.example.du_inferno.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660989553102-08n2q3en32pqdaqs2crafvs5q34cakvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDACIs-NtFt3UsnwwQupTHWiHzAz3AUk_U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -91,7 +91,7 @@ public class NevigationBarActivities extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_voluntier) {
+        if (id == R.id.nav_volunteer) {
 
             startActivity(new Intent(NevigationBarActivities.this,Volunteer_Form.class));
         } else if (id == R.id.nav_acc_setting) {
@@ -99,7 +99,8 @@ public class NevigationBarActivities extends AppCompatActivity
         } else if (id == R.id.nav_add_contact) {
             startActivity(new Intent(NevigationBarActivities.this,Emergency_Contact.class));
 
-        }  else if (id == R.id.nav_send) {
+        }  else if (id == R.id.nav_show_volunteer) {
+            startActivity(new Intent(NevigationBarActivities.this,Volunteer_List.class));
 
         }else if (id == R.id.nav_share) {
 

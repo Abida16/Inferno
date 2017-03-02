@@ -1,15 +1,12 @@
 package com.example.du_inferno.myapplication;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.List;
 
 public class Volunteer_Form extends AppCompatActivity {
 
@@ -60,14 +57,14 @@ public class Volunteer_Form extends AppCompatActivity {
 
 
 
-                Log.d("Reading: ", "Reading all contacts..");
-                List<Volunteer> contacts = dbhandler.getAllVolunteers();
+                //Log.d("Reading: ", "Reading all contacts..");
+               // List<Volunteer> contacts = dbhandler.getAllVolunteers();
 
-                for (Volunteer cn : contacts) {
+               /* for (Volunteer cn : contacts) {
                     String log = "Id: "+cn.getEmail()+" ,Name: " + cn.getName() + " ,Phone: " + cn.getPhoneNumber();
                     // Writing Contacts to log
                     Log.d("Name: ", log);
-                }
+                }*/
             }
         });
     }

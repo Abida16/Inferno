@@ -56,7 +56,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Settings"
             android:label="@string/title_activity_account__settings" />
@@ -81,6 +80,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".Volunteer_List"></activity>
     </application>
 
 </manifest>
