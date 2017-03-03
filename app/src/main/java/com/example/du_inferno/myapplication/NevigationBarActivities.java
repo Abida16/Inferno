@@ -51,6 +51,15 @@ public class NevigationBarActivities extends AppCompatActivity
                 startActivity(new Intent(NevigationBarActivities.this, MapsActivity.class));
             }
         });
+
+        btn = (Button)findViewById(R.id.Remote_db);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NevigationBarActivities.this, RemoteDatabaseHandling.class));
+            }
+        });
     }
 
     @Override

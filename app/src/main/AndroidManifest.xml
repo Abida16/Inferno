@@ -80,7 +80,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Volunteer_List"></activity>
+        <activity android:name=".Volunteer_List" />
+        <activity android:name=".RemoteDatabaseHandling"></activity>
     </application>
 
 </manifest>
