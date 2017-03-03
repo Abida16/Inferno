@@ -1,5 +1,6 @@
 package com.example.du_inferno.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 
 public class RemoteDatabaseHandling extends AppCompatActivity {
 
@@ -35,6 +39,8 @@ public class RemoteDatabaseHandling extends AppCompatActivity {
 
         // Connect to the Firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        FirebaseDatabase ref;
+        //ref = new FirebaseDatabase("https://console.firebase.google.com/project/inferno-9944a/Users");FirebaseDatabase("https://console.firebase.google.com/project/inferno-9944a/Users");
 
         // Get a reference to the todoItems child items it the database
         final DatabaseReference Users = database.getReference("Users");
@@ -73,8 +79,9 @@ public class RemoteDatabaseHandling extends AppCompatActivity {
         });
 
         // Add items via the Button and EditText at the bottom of the window.
-        final EditText text = (EditText) findViewById(R.id.todoText);
+        final EditText text = (EditText) findViewById(R.id.nametext);
         final Button button = (Button) findViewById(R.id.addButton);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -88,6 +95,67 @@ public class RemoteDatabaseHandling extends AppCompatActivity {
             }
         });
 
+        final Button button2 = (Button) findViewById(R.id.showButton);
+        //final LinkedList<String> al=new LinkedList<String>();
+        //final String str="";
+        button2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                //mDatabase.child("<dbLocationTag>").addValueEventListener(new ValueEventListener() {
+                Users.addValueEventListener(new ValueEventListener() {
+                    //String str;
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String str = "";
+                        for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                        //while(dataSnapshot.hasChildren()) {
+                            //DataSnapshot firstChild = dataSnapshot.getChildren().iterator().next();
+                            str+=dsp.getValue().toString()+"\n";
+                            //al.add(str);
+                            System.out.println(str);
+                            //dataSnapshot.getChildren().iterator().next();
+                        }
+                        System.out.println(" our database list of volun "+str);
+                        Intent intent = new Intent("com.example.du_inferno.myapplication.vol_database");
+                        intent.putExtra("mytext",str);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+
+
+                });
+                /*System.out.println(" our database list of volun "+str);
+                Intent intent = new Intent("com.example.du_inferno.myapplication.vol_database");
+                intent.putExtra("mytext",str);
+                startActivity(intent);*/
+                /*Users.child("<dbLocationTag>").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        // the changed value is going to be stored into the dataSnapshot
+                        // to retrieve value from dataSnapshot we write
+
+                        String value = dataSnapshot.getValue(String.class);
+                        System.out.println(value+"\n\r");
+                        //mValueView.setText(value);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        //mValueView.setText(databaseError.toString());
+                        System.out.println(databaseError.toString());
+
+                    }
+                });*/
+
+            }
+
+        });
         // Delete items when clicked
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

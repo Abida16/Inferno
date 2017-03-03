@@ -18,6 +18,21 @@ import android.widget.Button;
 public class NevigationBarActivities extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    /*private static Button adv_btn;
+
+    public void onClickButtonListener()
+    {
+        adv_btn = (Button)findViewById(R.id.adv);
+        adv_btn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intnt = new Intent("com.example.du_inferno.myapplication");
+                        startActivity(intnt);
+                    }
+                }
+        );
+    }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +73,15 @@ public class NevigationBarActivities extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NevigationBarActivities.this, RemoteDatabaseHandling.class));
+            }
+        });
+        //onClickButtonListener();
+        Button adv_btn = (Button)findViewById(R.id.adv);
+        adv_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity(new Intent("com.example.du_inferno.myapplication.Act_adv"));
+               // startActivity(new Intent(NevigationBarActivities.this, RemoteDatabaseHandling.class));
             }
         });
     }

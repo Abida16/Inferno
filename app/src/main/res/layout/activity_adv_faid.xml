@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_adv_faid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.du_inferno.myapplication.adv_faid">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/aid_fld"
+        android:scrollbars="vertical"
+        android:text="First Aid for Burns\n\n
+
+What causes burns?\n
+You can get burned by heat, fire, radiation, sunlight, electricity, chemicals or hot or boiling water. There are 3 degrees of burns:\n\n
+
+First-degree burns are red and painful. They swell a little. They turn white when you press on the skin. The skin over the burn may peel off after 1 or 2 days.\n\n
+
+Second-degree burns are thicker burns, are very painful and typically produce blisters on the skin. The skin is very red or splotchy, and may be very swollen.\n\n
+
+Third-degree burns cause damage to all layers of the skin. The burned skin looks white or charred. These burns may cause little or no pain because the nerves and tissue in the skin are damaged.\n\n
+
+How long does it take for burns to heal?\n
+First-degree burns usually heal in 3 to 6 days.\n
+Second-degree burns usually heal in 2 to 3 weeks.\n
+Third-degree burns usually take a very long time to heal.\n\n
+
+How are burns treated?\n
+The treatment depends on what kind of burn you have.
+\n
+See a doctor if:
+\n
+A first- or second-degree burn covers an area larger than 2 to 3 inches in diameter.
+\n
+The burn is on your face, over a major joint (such as the knee or shoulder), on the hands, feet or genitals.
+\n
+The burn is a third-degree burn, which requires immediate medical attention.
+\n\n
+1. First-degree burn:\n
+Soak the burn in cool water for at least 5 minutes. The cool water helps reduce swelling by pulling heat away from the burned skin.\n
+\n
+Treat the burn with a skin care product that protects and heals skin, such as aloe vera cream or an antibiotic ointment. You can wrap a dry gauze bandage loosely around the burn. This will protect the area and keep the air off of it.\n\n
+
+Take an over-the-counter pain reliever, such as acetaminophen (one brand name: Tylenol), ibuprofen (some brand names: Advil, Motrin) or naproxen (brand name: Aleve), to help with the pain. Ibuprofen and naproxen will also help with swelling.\n\n
+
+2. Second-degree burn:\n
+Soak the burn in cool water for 15 minutes. If the burned area is small, put cool, clean, wet cloths on the burn for a few minutes every day. Then put on an antibiotic cream, or other creams or ointments prescribed by your doctor. Cover the burn with a dry nonstick dressing (for example, Telfa) held in place with gauze or tape. Check with your doctor’s office to make sure you are up-to-date on tetanus shots.
+\n\n
+Change the dressing every day. First, wash your hands with soap and water. Then gently wash the burn and put antibiotic ointment on it. If the burn area is small, a dressing may not be needed during the day. Check the burn every day for signs of infection, such as increased pain, redness, swelling or pus. If you see any of these signs, see your doctor right away. To prevent infection, avoid breaking any blisters that form.
+\n\n
+Burned skin itches as it heals. Keep your fingernails cut short and don’t scratch the burned skin. The burned area will be sensitive to sunlight for up to one year, so you should apply sunscreen to the area when you’re outside.
+\n\n
+3. Third-degree burn:\n
+For third-degree burns, go to the hospital right away. Don’t take off any clothing that is stuck to the burn. Don’t soak the burn in water or apply any ointment. If possible, raise the burned area above the level of the heart. You can cover the burn with a cool, wet sterile bandage or clean cloth until you receive medical assistance.
+\n\n" />
+</RelativeLayout>

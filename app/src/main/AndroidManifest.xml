@@ -81,7 +81,42 @@
             </intent-filter>
         </activity>
         <activity android:name=".Volunteer_List" />
-        <activity android:name=".RemoteDatabaseHandling"></activity>
+        <activity android:name=".RemoteDatabaseHandling" />
+        <activity android:name=".Act_adv">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication.Act_adv" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".adv_to_do">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication.adv_to_do" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".adv_wp_out">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication.adv_wp_out" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".adv_faid">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication.adv_faid" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".vol_database">
+            <intent-filter>
+                <action android:name="com.example.du_inferno.myapplication.vol_database" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

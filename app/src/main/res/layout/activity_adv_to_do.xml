@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_adv_to_do"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.du_inferno.myapplication.adv_to_do">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scrollbars="vertical"
+        android:text="Is there anything I shouldn’t do when treating a burn?\n\n
+Do not put butter or oil on burns. Do not put ice or ice water directly on second- or third-degree burns. If blisters form over the burn, do not break them. These things can cause more damage to the skin.
+\n\n
+What do I need to know about electrical and chemical burns?\n
+A person who has an electrical burn (for example, from a power line) should go to the hospital right away. Electrical burns often cause serious injury to organs inside the body. This injury may not show on the skin.
+\n\n
+A chemical burn should be flushed with large amounts of cool water. Take off any clothing or jewelry that has the chemical on it. Don’t put anything on the burned area, such as antibiotic ointment. This might start a chemical reaction that could make the burn worse. You can wrap the burn with dry, sterile gauze or a clean cloth. If you don’t know what to do, call 911 or your local poison control center, or see your doctor right away.\n"
+        android:id="@+id/td_fld" />
+</RelativeLayout>
