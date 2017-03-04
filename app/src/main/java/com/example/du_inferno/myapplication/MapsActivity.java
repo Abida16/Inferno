@@ -152,6 +152,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 currentLocation = latLng;
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 20);
                 mMap.animateCamera(cameraUpdate);
+               // addMapClickListener();
             }
         });
     }
