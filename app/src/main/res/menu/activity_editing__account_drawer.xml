@@ -14,10 +14,11 @@
             android:id="@+id/nav_add_contact"
             android:icon="@drawable/add_contact"
             android:title="Add emergency contact" />
+
         <item
-            android:id="@+id/nav_show_volunteer"
-            android:icon="@drawable/voluntier"
-            android:title="Check who is ready to help you" />
+            android:id="@+id/nav_view_location"
+            android:icon="@drawable/view_location"
+            android:title="View Location" />
 
     </group>
 

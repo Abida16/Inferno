@@ -40,14 +40,14 @@ public class NevigationBarActivities extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,7 +58,7 @@ public class NevigationBarActivities extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button btn = (Button)findViewById(R.id.map_button);
+        /*Button btn = (Button)findViewById(R.id.map_button);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +83,30 @@ public class NevigationBarActivities extends AppCompatActivity
                startActivity(new Intent("com.example.du_inferno.myapplication.Act_adv"));
                // startActivity(new Intent(NevigationBarActivities.this, RemoteDatabaseHandling.class));
             }
+        });*/
+
+        Button button= (Button) findViewById(R.id.menu);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent( NevigationBarActivities.this, CardActivity.class);
+                startActivity(intent);
+            }
+
         });
+
+        button=(Button) findViewById(R.id.emergency);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(NevigationBarActivities.this, call_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 
     @Override
@@ -132,10 +155,12 @@ public class NevigationBarActivities extends AppCompatActivity
         } else if (id == R.id.nav_add_contact) {
             startActivity(new Intent(NevigationBarActivities.this,Emergency_Contact.class));
 
-        }  else if (id == R.id.nav_show_volunteer) {
-            startActivity(new Intent(NevigationBarActivities.this,Volunteer_List.class));
+        }
+        else if (id == R.id.nav_view_location) {
+            startActivity(new Intent(NevigationBarActivities.this,MapsActivity.class));
 
-        }else if (id == R.id.nav_share) {
+        }
+        else if (id == R.id.nav_share) {
 
         }
 

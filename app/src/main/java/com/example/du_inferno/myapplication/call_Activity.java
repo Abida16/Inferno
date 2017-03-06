@@ -18,9 +18,10 @@ public class call_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // setContentView(R.layout.content_editing__account);
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:01767698004"));
-        phoneNo = "01733204102";
+        phoneNo = "01953057383";
         message = "ebar?";
 
         if (ActivityCompat.checkSelfPermission(call_Activity.this,
@@ -29,8 +30,8 @@ public class call_Activity extends AppCompatActivity {
         }
         sendSMS(phoneNo, message);
         startActivity(callIntent);
-        //Intent intent = new Intent(call_Activity.this , MainPage_Activity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(call_Activity.this , MainPage_Activity.class);
+        startActivity(intent);
 
     }
     private void sendSMS(String phoneNumber, String message)

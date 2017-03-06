@@ -149,9 +149,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             {
                 Toast.makeText(getApplicationContext(),"mapped: " +location.toString(),Toast.LENGTH_SHORT).show();
                 LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                String locality = address.getLocality();
+                //System.out.println("***********************"+address.toString()+"**************************");
                 currentLocation = latLng;
+                //currentLocation.
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 20);
                 mMap.animateCamera(cameraUpdate);
+                MarkerOptions opt = new MarkerOptions().title(locality).position(latLng);
+                mMap.addMarker(opt);
                // addMapClickListener();
             }
         });

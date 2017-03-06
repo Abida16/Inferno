@@ -51,7 +51,7 @@ public class SignInFragment extends Fragment {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putBoolean(getString(R.string.SignedIn), true);
                     editor.apply();
-                    Intent intent = new Intent(getContext() , MainPage_Activity.class);
+                    Intent intent = new Intent(getContext() , NevigationBarActivities.class);
                     startActivity(intent);
                 }
 

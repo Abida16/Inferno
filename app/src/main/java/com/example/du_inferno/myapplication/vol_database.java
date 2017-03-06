@@ -14,7 +14,15 @@ public class vol_database extends AppCompatActivity {
         setContentView(R.layout.activity_vol_database);
         textView = (TextView)findViewById(R.id.vol_data);
         textView.setMovementMethod(new ScrollingMovementMethod());
-        textView.setText(getIntent().getStringExtra("mytext"));
+        String str = getIntent().getStringExtra("mytext");
+
+        String s[]=str.split(" ");
+        str="";
+        for(int i=0;i<s.length;i++)
+        {
+            str +=s[i]+"\n";
+        }
+        textView.setText(str);
 
     }
 }

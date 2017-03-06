@@ -7,9 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class Volunteer_Form extends AppCompatActivity {
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    FirebaseDatabase ref;
+    //ref = new FirebaseDatabase("https://console.firebase.google.com/project/inferno-9944a/Users");FirebaseDatabase("https://console.firebase.google.com/project/inferno-9944a/Users");
 
+    // Get a reference to the todoItems child items it the database
+    final DatabaseReference Users = database.getReference("Users");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +63,10 @@ public class Volunteer_Form extends AppCompatActivity {
                 Volunteer volunteer = new Volunteer(Name,Phone,Email,Password,Address);
                 dbhandler.addVolunteer(volunteer);
 
+
+                DatabaseReference childRef = Users.push();
+                String str= Name+" "+Phone+" "+Email+" "+Password+" "+Address+" ";
+                childRef.setValue(str);
 
 
                 //Log.d("Reading: ", "Reading all contacts..");

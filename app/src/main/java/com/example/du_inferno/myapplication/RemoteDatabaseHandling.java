@@ -20,6 +20,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 
 public class RemoteDatabaseHandling extends AppCompatActivity {
@@ -43,9 +44,10 @@ public class RemoteDatabaseHandling extends AppCompatActivity {
         //ref = new FirebaseDatabase("https://console.firebase.google.com/project/inferno-9944a/Users");FirebaseDatabase("https://console.firebase.google.com/project/inferno-9944a/Users");
 
         // Get a reference to the todoItems child items it the database
-        final DatabaseReference Users = database.getReference("Users");
+       final DatabaseReference Users = database.getReference("Users");
+      //  final DatabaseReference  Users = database.getReference("Volunteers");
 
-        // Assign a listener to detect changes to the child items
+        // Assign a listener to detectanges to the child items
         // of the database reference.
         Users.addChildEventListener(new ChildEventListener() {
 
@@ -83,14 +85,31 @@ public class RemoteDatabaseHandling extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.addButton);
 
 
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                // Create a new child with a auto-generated ID.
-                DatabaseReference childRef = Users.push();
+               /* DatabaseHandler dbhandler = new DatabaseHandler(RemoteDatabaseHandling.this);
+                List<Volunteer> volunteers_list= dbhandler.getAllVolunteers();
+
+                for (Volunteer vn : volunteers_list) {
+                    String str="";
+                    str="Email: "+vn.getEmail()+" ,?Name: " + vn.getName() + " ,?Phone: " + vn.getPhoneNumber()
+                            +" ,?Address: " + vn.getAddress() ;
+                    System.out.println(str+"\n");
+                    DatabaseReference childRef = Users.push();
+                    childRef.setValue(str);
+                    // Writing Contacts to log
+
+                }*/
+               // DatabaseReference childRef = Users.push();
 
                 // Set the child's data to the value passed in from the text box.
+                DatabaseReference childRef = Users.push();
                 childRef.setValue(text.getText().toString());
+                //childRef.setValue(str);
 
             }
         });
@@ -182,5 +201,15 @@ public class RemoteDatabaseHandling extends AppCompatActivity {
             }
         })
         ;
+    }
+
+    public void DataSave()
+    {
+
+    }
+
+    public void DataRetrieve()
+    {
+
     }
 }

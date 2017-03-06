@@ -32,7 +32,7 @@ public class SignUp_Activity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putBoolean(getString(R.string.SignedIn), true);
                     editor.apply();
-                    Intent intent = new Intent(SignUp_Activity.this, MainPage_Activity.class);
+                    Intent intent = new Intent(SignUp_Activity.this, NevigationBarActivities.class);
                     startActivity(intent);
                 }
 

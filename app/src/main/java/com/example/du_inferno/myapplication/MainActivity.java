@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         else{
-            Intent intent=new Intent(MainActivity.this,MainPage_Activity.class);
+            Intent intent=new Intent(MainActivity.this,NevigationBarActivities.class);
             startActivity(intent);
         }
     }
